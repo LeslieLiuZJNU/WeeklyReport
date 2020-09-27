@@ -1,5 +1,11 @@
 # Bluetooth Communication Test Between Android and Arduino
 
+
+
+To download the whole project, click the [BluetoothController release](https://github.com/LeslieLiuZJNU/WeeklyReport/releases/tag/v0.0.1-alpha).
+
+
+
 ## Background
 
 An IoT work, for the middle school competition.
@@ -90,8 +96,6 @@ void sendStatus(){
 On Android
 
 Each time after sending a command, the App will waiting for the response from the Arduino, and then change the color of the buttons.
-
-To download the whole project, click the [BluetoothController release](https://github.com/LeslieLiuZJNU/WeeklyReport/releases/tag/v0.0.1-alpha).
 
 <img src="images/20200927_BluetoothApp01.jpg" alt="avatar" style="zoom:20%;" /><img src="images/20200927_BluetoothApp02.jpg" alt="avatar" style="zoom:20%;" />
 
