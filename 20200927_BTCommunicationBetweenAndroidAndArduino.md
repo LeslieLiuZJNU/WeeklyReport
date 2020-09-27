@@ -18,7 +18,7 @@ Android phone with API 29 (Android 10)
 
 ## Set up
 
-- ![avatar](images/20200927_HC-05.JPG)
+- <img src="images/20200927_HC-05.jpg" alt="avatar" style="zoom:50%;" />
 
 HC-05 TX ----> Arduino 10
 
@@ -93,9 +93,9 @@ Each time after sending a command, the App will waiting for the response from th
 
 To download the whole project, click release.
 
-![avatar](images/20200927_BluetoothApp01.JPG)
+<img src="images/20200927_BluetoothApp01.jpg" alt="avatar" style="zoom:50%;" />
 
-![avatar](images/20200927_BluetoothApp02.JPG)
+<img src="images/20200927_BluetoothApp02.jpg" alt="avatar" style="zoom:50%;" />
 
 ## Problem and solution
 
