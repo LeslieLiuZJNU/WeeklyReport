@@ -10,7 +10,7 @@ To download the whole project, click the [BluetoothController release](https://g
 
 An IoT work, for the middle school competition.
 
-One house which consist of many kinds of household appliances (be represented by LEDs).
+One house model which consist of many kinds of household appliances (be represented by LEDs).
 
 One application based on Android to remotely control the LEDs through Bluetooth protocol.
 
