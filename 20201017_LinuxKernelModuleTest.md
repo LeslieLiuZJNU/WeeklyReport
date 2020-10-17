@@ -12,13 +12,13 @@ Install Ubuntu 20.04.
 
 Connect to Ubuntu through ssh tool.
 
-Use command `sudo -i` to get root privilege.
+Get root privilege through command `sudo -i` .
 
 <img src="images/20201017_Prepare.jpg">
 
 ## Create and Compile
 
-Use command `nano simple.c` to create a editable file in `/root/print_dmesg` directory.
+Create a editable file in `/root/print_dmesg` directory through command `nano simple.c` .
 
 Then put the following codes and save it.
 
@@ -46,7 +46,7 @@ MODULE_DESCRIPTION("Simple Module");
 MODULE_AUTHOR("SGG");
 ```
 
-Use command `nano Makefile` to create a editable file in `/root/print_dmesg` directory.
+Create a editable file in `/root/print_dmesg` directory through command `nano Makefile` .
 
 Then put the following codes and save it.
 
@@ -61,15 +61,15 @@ clean:
 	make -C $(KDIR) M=$(PWD) clean
 ```
 
-Use command `make` to compile `simple.c` into `print_dmesg.ko` Linux kernel module.
+Compile `.c` into `.ko` (Linux kernel module) through command `make` .
 
 <img src="images/20201017_CreateAndCompile.jpg">
 
 ## Load and Remove
 
-Load: `insmod ModuleName`
+Load: `insmod ModuleName.ko`
 
-Remove: `rmmod ModuleName`
+Remove: `rmmod ModuleName.ko`
 
 Show kernel log buffer: `dmesg`
 
@@ -79,39 +79,39 @@ Show kernel log buffer: `dmesg`
 
 ### Attention
 
-According to ISO C90 or something, **all variables** should be **global**.
+​	According to ISO C90 or something, **all variables** should be **global**.
 
 ### Additional libraries, functions, fields, structures, and macros
 
-linux/slab.h
+​	linux/slab.h
 
-​	`kmalloc()` Similar with malloc(), used to allocate a kernel memory space.
+​		`kmalloc()` Similar with malloc(), used to allocate a kernel memory space.
 
-​	`kfree()` Release the memory space.
+​		`kfree()` Release the memory space.
 
-linux/gfp.h
+​	linux/gfp.h
 
-​	`GFP_KERNEL` Flag. Means kernel method or something.
+​		`GFP_KERNEL` Flag. Means kernel method or something.
 
-linux/type.h
+​	linux/type.h
 
-​	`list_head` Structure. Linked list head.
+​		`list_head` Structure. Linked list head.
 
-linux/list.h
+​	linux/list.h
 
-​	`INIT_LIST_HEAD()` Initialize the linked list head.
+​		`INIT_LIST_HEAD()` Initialize the linked list head.
 
-​	`list_add_tail()` Link the latter to the former.
+​		`list_add_tail()` Link the latter to the former.
 
-​	`list_del()` Clear a linked list head.
+​		`list_del()` Clear a linked list head.
 
-​	`list_for_each_entry()` Macro. Traverse the linked list.
+​		`list_for_each_entry()` Macro. Traverse the linked list.
 
-​	`list_for_each_entry_safe` Macro. One additional argument.
+​		`list_for_each_entry_safe` Macro. One additional argument.
 
 ### Code and compile
 
-Modify `simple.c` as the following.
+​	Modify `simple.c` as the following.
 
 ```c
 //simple.c
@@ -214,12 +214,12 @@ MODULE_DESCRIPTION("Simple Module");
 MODULE_AUTHOR("SGG");
 ```
 
-Then compile it into module.
+​	Then compile it into module.
 
 ### Result
 
-Load and remove the module.
+​	Load and remove the module.
 
-See the kernel log info.
+​	See the kernel log info.
 
 <img src="images/20201017_LinkedList.jpg">
