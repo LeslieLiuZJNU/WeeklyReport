@@ -79,39 +79,39 @@ Show kernel log buffer: `dmesg`
 
 ### Attention
 
-​	According to ISO C90 or something, **all variables** should be **global**.
+According to ISO C90 or something, **all variables** should be **global**.
 
 ### Additional libraries, functions, fields, structures, and macros
 
-​	linux/slab.h
+*linux/slab.h*
 
-​		`kmalloc()` Similar with malloc(), used to allocate a kernel memory space.
+`kmalloc()` Similar with malloc(), used to allocate a kernel memory space.
 
-​		`kfree()` Release the memory space.
+`kfree()` Release the memory space.
 
-​	linux/gfp.h
+*linux/gfp.h*
 
-​		`GFP_KERNEL` Flag. Means kernel method or something.
+`GFP_KERNEL` Flag. Means kernel method or something.
 
-​	linux/type.h
+*linux/type.h*
 
-​		`list_head` Structure. Linked list head.
+`list_head` Structure. Linked list head.
 
-​	linux/list.h
+*linux/list.h*
 
-​		`INIT_LIST_HEAD()` Initialize the linked list head.
+`INIT_LIST_HEAD()` Initialize the linked list head.
 
-​		`list_add_tail()` Link the latter to the former.
+`list_add_tail()` Link the latter to the former.
 
-​		`list_del()` Clear a linked list head.
+`list_del()` Clear a linked list head.
 
-​		`list_for_each_entry()` Macro. Traverse the linked list.
+`list_for_each_entry()` Macro. Traverse the linked list.
 
-​		`list_for_each_entry_safe` Macro. One additional argument.
+`list_for_each_entry_safe` Macro. One additional argument.
 
 ### Code and compile
 
-​	Modify `simple.c` as the following.
+Modify `simple.c` as the following.
 
 ```c
 //simple.c
@@ -214,12 +214,12 @@ MODULE_DESCRIPTION("Simple Module");
 MODULE_AUTHOR("SGG");
 ```
 
-​	Then compile it into module.
+Then compile it into module.
 
 ### Result
 
-​	Load and remove the module.
+Load and remove the module.
 
-​	See the kernel log info.
+See the kernel log info.
 
 <img src="images/20201017_LinkedList.jpg">
