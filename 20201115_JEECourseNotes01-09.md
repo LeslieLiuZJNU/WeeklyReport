@@ -27,7 +27,7 @@ Struts2
 ## 03 JSP 5大组成部分elements
 ### 一、JSP指令Directives
 
-Page &lt%@page XXX %&gt
+Page &lt;%@page XXX %&gt;
 1. 编程语言java
 
 2. 文本解析方式text/html
@@ -41,38 +41,38 @@ Page &lt%@page XXX %&gt
 
 meta和page是冗余设置，有一个就行
 
-### 二、JSP脚本段script&lt% %&gt
+### 二、JSP脚本段script&lt;% %&gt;
 
 提取出JAVA代码，按照某种方式生成JAVA类来放在服务器上编译运行
 	1. 在网页端运行某些JAVA代码
 	  变量的定义、赋值、简单运算
 	  控制台输出
 	  带包使用类 java.util.Date
-	  也可以在page里导入包&lt%@page import="*"%&gt
+	  也可以在page里导入包&lt;%@page import="*"%&gt;
 	  类的创建
 	2. 内置对象out 把结果输到网页上
 	    out.println()
 Tomcat对JAVA脚本遵循单例模式，一个对象来服务所有人，但是有很多线程高并发。
 	3. 用脚本段输出HTML标签
-	    out.print("&ltbr&gt");
+	    out.print("&lt;br&gt;");
 	4. 用脚本段分拆，囊括HTML段落
-	    &lt%for(int i=0;i&lt5;i++){%&gt
-	    &lt%}%&gt
+	    &lt;%for(int i=0;i&lt;5;i++){%&gt;
+	    &lt;%}%&gt;
 	
 
 JSP文件，每次被提交（网页刷新）的时候，先查看文件有没有更新，无更新则用旧缓存，有更新则重新让服务器编译运行。
 
-### 三、JSP表达式expression&lt%=   %&gt
+### 三、JSP表达式expression&lt;%=   %&gt;
 向网页输出表达式内容
-  &lt%int x=1,y=2;%&gt
-  &lt%=x+y%&gt
+  &lt;%int x=1,y=2;%&gt;
+  &lt;%=x+y%&gt;
 
-### 四、JSP注释comments&lt%--  --%&gt
+### 四、JSP注释comments&lt;%--  --%&gt;
 不会被发送到浏览器端
   HTML注释里可以插JSP脚本
   JSP注释里插进去没用
 
-### 五、JSP声明declaration&lt%! %&gt
+### 五、JSP声明declaration&lt;%! %&gt;
 相当于在java类的成员变量的部分，不能执行过程
 也可以声明成员方法、内部类
   机器会自动创建对象，哪怕不是静态方法也能调用。
@@ -206,14 +206,14 @@ HttpServlet可以用doGet和doPost。
 ​		发布到网上去访问的地址。
 ​		原生xml配置方式：
 ​			web.xml
-​			&ltservlet&gt
-​				&ltservlet-name&gttest&lt/servlet-name&gt访问的名字（虚拟的）
-​				&ltservlet-class&gtservlets.xxx.xxx.MyServlet&ltservlet-class&gt带包写对应的servlet类
-​			&lt/servlet&gt
-​			&ltservlet-mapping&gt
-​				&ltservlet-name&gttest&ltservlet-name&gt上面写的访问名字
-​				&lturl-pattern&gt/hello&lturl-pattern&gt转换成URI的方式（用“/”开头）
-​			&lt/servlet-mapping&gt
+​			&lt;servlet&gt;
+​				&lt;servlet-name&gt;test&lt;/servlet-name&gt;访问的名字（虚拟的）
+​				&lt;servlet-class&gt;servlets.xxx.xxx.MyServlet&lt;servlet-class&gt;带包写对应的servlet类
+​			&lt;/servlet&gt;
+​			&lt;servlet-mapping&gt;
+​				&lt;servlet-name&gt;test&lt;servlet-name&gt;上面写的访问名字
+​				&lt;url-pattern&gt;/hello&lt;url-pattern&gt;转换成URI的方式（用“/”开头）
+​			&lt;/servlet-mapping&gt;
 ​			访问 XXXXXX/项目名/hello 就能用了。
 ​			可能会遇到冲突问题，web.xml配置不成功。先注释掉下面那种注解配置代码，重启配置web.xml，再把注释恢复，再重启。
 ​		注解代码配置方式：
@@ -248,7 +248,7 @@ servlet实例 输出响应消息，返回给 容器
 ### 页面输出：
 ​	PrintWriter out = resp.getWriter();
 ​	out.print("hello");
-​	out.print("&lth1&gthello&lt/h1&gt");//只是这一句标签片段，不是完整的网页文档
+​	out.print("&lt;h1&gt;hello&lt;/h1&gt;");//只是这一句标签片段，不是完整的网页文档
 
 ### 扯淡的背景故事：
 ​	先有了Servlet，再有了Jsp。
@@ -277,10 +277,10 @@ ServletContext 在多个servlet之间传递数据
 
 和web.xml之间联动
 web.xml
-<context-param>环境参数，更高层级的键值对
-	<param-name>xxx</param-name>
-	<param-value>ooo</param-value>
-</context-param>
+&lt;context-param&gt;环境参数，更高层级的键值对
+	&lt;param-name&gt;xxx&lt;/param-name&gt;
+	&lt;param-value&gt;ooo&lt;/param-value&gt;
+&lt;/context-param&gt;
 然后用context.getInitParameter();就能取到这键值对。
 
 ### 任务：
@@ -303,13 +303,13 @@ request/response
 
 ​	传统情况下：接收完服务端的数据之后，网页其实是离线的。
 ​	解决方法：
-		1. 自动刷新
-			response.setHeader("Refresh",1);
-			response.getWriter().print(new java.util.Date());
-		2. 重定向
-			response.sendRedirect();
-		3. 无刷－异步通信模式(阿贾克斯)
-			以后的课再说。
+​		1. 自动刷新
+​			response.setHeader("Refresh",1);
+​			response.getWriter().print(new java.util.Date());
+​		2. 重定向
+​			response.sendRedirect();
+​		3. 无刷－异步通信模式(阿贾克斯)
+​			以后的课再说。
 
 ### Request的底层－涉及到计算机网络和协议
 ​	获取HTTP请求头的名和值
